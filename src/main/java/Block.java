@@ -1,14 +1,18 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.Date;
 import java.security.MessageDigest;
+
 
 public class Block {
 
     public String hash;
     public String previousHash;
-    private String data;
+    public Data data;
     private long timeStamp;
 
-    public Block(String data, String previousHash) {
+    public Block(Data data, String previousHash) {
         this.data = data;
         this.previousHash = previousHash;
         this.timeStamp = new Date().getTime();
